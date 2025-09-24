@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Marcus Savings Tracker • Friends</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body class="pb-20">
+
+
+  <header>
+    <div class="header-content">
+      <div class="header-title">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path d="17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+          <circle cx="9" cy="7" r="4"></circle>
+          <path d="23 21v-2a4 4 0 0 0-3-3.87"></path>
+          <path d="16 3.13a4 4 0 0 1 0 7.75"></path>
+        </svg>
+        Friends
+      </div>
+      <div class="header-actions">
+        <button id="inviteBtn" class="btn btn-primary">Invite</button>
+        <button id="themeToggle" class="theme-toggle">☀️</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="app-container page-content">
+    <div class="stats-grid" style="grid-template-columns: repeat(3, 1fr);">
+      <div class="stat-card text-center">
+        <div class="stat-label">
+          <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path d="17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+            <circle cx="9" cy="7" r="4"></circle>
+            <path d="23 21v-2a4 4 0 0 0-3-3.87"></path>
+            <path d="16 3.13a4 4 0 0 1 0 7.75"></path>
+          </svg>
+          Friends
+        </div>
+        <div class="stat-value" id="friendsCount">0</div>
+      </div>
+      <div class="stat-card text-center">
+        <div class="stat-label">
+          <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <circle cx="12" cy="12" r="10"></circle>
+            <path d="12 2v20M2 12h20"></path>
+          </svg>
+          Active Goals
+        </div>
+        <div class="stat-value" id="friendsActive">0</div>
+      </div>
+      <div class="stat-card text-center">
+        <div class="stat-label">
+          <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path d="8 12l2 2 4-4"></path>
+            <circle cx="12" cy="12" r="10"></circle>
+          </svg>
+          Completed
+        </div>
+        <div class="stat-value" id="friendsCompleted">0</div>
+      </div>
+    </div>
+
+    <h2 class="mb-4">Your Friends</h2>
+    <section id="friendsList" aria-live="polite"></section>
+
+    <section class="card mt-6 text-center">
+      <div class="text-4xl mb-2">🤝</div>
+      <h3 class="mb-1">Invite More Friends</h3>
+      <p class="text-secondary mb-4">Share your goals and motivate each other to reach your savings targets together.</p>
+      <div class="flex gap-2">
+        <input id="shareInput" class="form-input" style="flex: 1;" readonly />
+        <button id="copyShare" class="btn btn-primary">Copy</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bottom-nav">
+    <div class="nav-grid">
+      <a class="nav-item" href="index.html">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+          <polyline points="9,22 9,12 15,12 15,22"></polyline>
+        </svg>
+        <span class="nav-label">Dashboard</span>
+      </a>
+      <a class="nav-item" href="goals.html">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <circle cx="12" cy="12" r="10"></circle>
+          <circle cx="12" cy="12" r="6"></circle>
+          <circle cx="12" cy="12" r="2"></circle>
+        </svg>
+        <span class="nav-label">Goals</span>
+      </a>
+      <a class="nav-item active" href="friends.html">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+          <circle cx="9" cy="7" r="4"></circle>
+          <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+          <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+        </svg>
+        <span class="nav-label">Friends</span>
+      </a>
+      <a class="nav-item" href="profile.html">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+          <circle cx="12" cy="7" r="4"></circle>
+        </svg>
+        <span class="nav-label">Profile</span>
+      </a>
+    </div>
+  </footer>
+
+  <script src="js/utils.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/validators.js"></script>
+  <script src="js/components.js"></script>
+  <script src="js/goals.js"></script>
+  <script src="js/friends.js"></script>
+  <script src="js/celebration.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
