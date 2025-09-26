@@ -5,15 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Goals — Minimal</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
+
 <body class="pb-20 bg-gray-50 text-gray-900">
   <!-- Header -->
   <header class="p-4 shadow-sm bg-white">
     <div class="max-w-3xl mx-auto flex items-center justify-between">
-      <div class="text-lg font-semibold">Goals</div>
-      <div class="flex items-center gap-2">
-        <button id="toggleGoalForm" class="btn btn-primary">Create</button>
+      <!-- Logo -->
+      <div>
+        <img class="w-24" src="./assets/logos/marcus-gs-logo-light.svg" alt="Marcus Savings Goal Tracker" class="logo">
+      </div>
+      <!-- Navigation -->
+      <div class="flex items-center gap-4 text-sm font-semibold text-white">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="goals.html" class="nav-link active">Goals</a>
+        <a href="stats.html" class="nav-link">Stats</a>
+        <button id="toggleGoalForm" class="btn btn-primary-bold">New Goal</button>
         <button id="themeToggle" class="text-sm">☀️</button>
       </div>
     </div>

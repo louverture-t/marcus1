@@ -1,0 +1,25 @@
+{
+  "name": "marcus1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "goals.js",
+  "scripts": {
+    "build-css": "tailwindcss -i ./src/input.css -o ./assets/css/styles.css --watch",
+    "build": "tailwindcss -i ./src/input.css -o ./assets/css/styles.css",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/louverture-t/marcus1.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/louverture-t/marcus1/issues"
+  },
+  "homepage": "https://github.com/louverture-t/marcus1#readme",
+  "devDependencies": {
+    "tailwindcss": "^4.1.13"
+  }
+}

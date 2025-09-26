@@ -1,0 +1,14 @@
+/* Minimal custom styles alongside Tailwind */
+:root {
+  
+  --bg:#f8fafc;
+  --card:#ffffff; }
+
+[data-theme="dark"] { --bg:#0f172a; --card:#0b1220; color: #e6eef8; }
+body { background: var(--bg); font-family: 'Open Sans', ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; }
+.card { background: var(--card); border-radius: 8px; box-shadow: 0 1px 3px rgba(2,6,23,0.06); }
+.btn { padding: .375rem 1rem; border-radius: 2px; font-weight: 400; font-size: .875rem; }
+.btn-primary-bold { background: #2563eb; color: #fff; }
+.btn-primary-subtle { background: transparent; color: #111827; }
+
+.form-input { border: 1px solid #e6e9ef; padding: .5rem; border-radius: 6px; background: transparent; }
