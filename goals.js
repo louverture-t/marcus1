@@ -63,9 +63,12 @@
         </div>
         <div class="flex justify-between items-start">
           <div>
-            <div class="text-2xl font-semibold text-gray-900">${esc(g.name)}${esc(g.category)}</div>
-            <div class="text-xs text-gray-400">Goal:${fmtCurrency(g.target)}</div> 
-            <div class="text-xs text-gray-400">${g.date}</div>
+            <div class="grid grid-cols-2 gap-2 justify-items-start place-items-center text-2xl font-semibold text-gray-900">
+              ${esc(g.name)}
+              <div class="badge inline text-xs">${esc(g.category)}</div>
+            </div>
+            <div class="font-semibold text-s text-gray-900">Goal: ${fmtCurrency(g.target)}</div> 
+            <div class="text-s text-gray-400">${g.date}</div>
           </div>
           <div class="flex flex-col items-end gap-2">
             ${g.saved
@@ -133,7 +136,7 @@
     refs.limitError.textContent = '';
     const vals = {
       name: refs.name.value.trim(),
-      category: refs.category.value,
+      category: refs.category.value.toUpperCase(),
       amount: refs.amount.value,
       date: refs.date.value,
     };

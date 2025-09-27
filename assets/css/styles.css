@@ -42,7 +42,6 @@ body {
   background: var(--bg-primary);
   border-radius: 8px;
   box-shadow: 0 1px 3px rgba(2, 6, 23, 0.06);
-  row-gap: 16px;
 }
 
 .btn {
@@ -106,4 +105,13 @@ body {
 
 #custom-body {
   background: var(--bg-contrast);
+}
+
+.badge {
+  padding: 2px 8px;
+  font-size: 12px;
+  font-weight: 600;
+  background: var(--gray-70);
+  color: var(--text-light);
+  border-radius: 16px;
 }
