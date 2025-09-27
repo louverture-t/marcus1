@@ -25,6 +25,43 @@ Additionally, the Mint budgeting app was shut down on March 23, 2024, and users 
 Saving money is a crucial habit necessary to reach big financial goals and improve quality of life while avoiding the pitfalls of crippling debt. Following the pandemic, we saw an influx of savings but now the financial landscape of households looks very different. Although interest rates have increased during this time, savings rates have not kept pace and the struggle is now being felt beyond people’s wallets.
 
 ## Proposed Solution
+## Features
+Project name-Marcus 1 by Goldman Sachs Savings Goal Feature
+A simple, responsive web app for setting and tracking your personal savings goals. Our new technologies used include Tailwind CSS (D), ARTIFICIAL INTELLIGENCE (J) for guidance and ideas.
+Link to the KanBan Board -https://github.com/users/louverture-t/projects/1
+Link to the Project Repo -https://github.com/louverture-t/marcus1
+Overview of the project -  This project is a feature set update for Marcus by Goldman Sachs. This lifestyle-finance app aims to improve the financial behavioral orientations of friend and family groups. The updated features will function as a gateway to introduce new users to Marcus’ ecosystem of accessible financial products and must account for Goldman Sachs goal of making financial well-being equitable.
+https://github.com/louverture-t/marcus1
+- Add, complete, and delete savings goals
+- Track progress visually with stats and cards
+- Responsive design (desktop & mobile)
+- Light and dark mode with theme toggle
+- All data stored locally in your browser (no account needed)
+
+## How It Works
+
+1. **Add a Goal:** Click “New Goal,” fill in the form, and submit.
+2. **Track Progress:** See your active and completed goals at a glance.
+3. **Complete or Delete:** Mark goals as complete or remove them anytime.
+4. **Switch Theme:** Use the ☀️/🌙 button to toggle light/dark mode.
+
+## File Overview
+
+- `index.html` – Main structure, links to CSS/JS, uses Tailwind utility classes.
+- `styles.css` – Custom theming, layout, and responsive styles.
+- `goals.js` – All app logic: storage, rendering, validation, theme, and events.
+- `assets/logos/` – SVG logo files for both light and dark themes.
+- `prd.md` – Product Requirements Document (project summary).
+
+## CSS & Tailwind
+
+- Tailwind is loaded via CDN for utility classes (e.g., `p-4`, `flex`, `text-sm`).
+- Custom CSS variables and classes provide theming and component styles.
+- Responsive and accessible by design.
+
+## Getting Started
+
+Just open `index.html` in your browser. No installation required!
 
 
 ## Future Key Features
