@@ -61,9 +61,9 @@
         <div id="progressBarContainer" style="width: 100%; background-color: var(--bg-tertiary); border-radius: 5px; margin-bottom: 8px;">
             <div id="progressBarFill" style="width: ${progressPercentage}%; background-color: var(--blue-60); height: 4px; border-radius: 5px;"></div>
         </div>
-        <div class="flex justify-between items-start">
+        <div class="justify-between items-start">
           <div>
-            <div class="grid grid-cols-2 gap-2 justify-items-start place-items-center text-2xl font-semibold text-gray-900">
+            <div class="flex justify-start gap-4 items-center text-2xl font-semibold text-gray-900">
               ${esc(g.name)}
               <div class="badge inline text-xs">${esc(g.category)}</div>
             </div>
