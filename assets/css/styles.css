@@ -1,3 +1,8 @@
+@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /* Minimal custom styles alongside Tailwind */
 :root {
   /* Semantics */
@@ -31,10 +36,10 @@
 body { background: var(--bg); font-family: 'Open Sans', ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; }
 .card { background: var(--bg-primary); border-radius: 8px; box-shadow: 0 1px 3px rgba(2,6,23,0.06); }
 .btn { padding: .375rem 1rem; border-radius: 2px; font-weight: 600; font-size: .875rem; }
-.btn-primary-bold { background: var(--btn-bg-primary); color: var(--white); }
-.btn-primary-subtle { background: transparent; color: var(--text-primary); }
-.btn-contrast-bold { background: var(--bg-contrast); color: var(--white); }
-.btn-contrast-subtle { background: transparent; border: 1px solid var(--border-subtle); color: var(--text-light); }
+.btn-primary-bold { background: var(--btn-bg-primary); color: #fff; }
+.btn-primary-subtle { background: transparent; border: 2px solid var(--blue-60); color: var(--blue-60); }
+.btn-contrast-bold { background: var(--bg-contrast); color: #fff; }
+.btn-contrast-subtle { background: transparent; color: var(--text-light); }
 .form-input { border: 1px solid var(--border-subtle); padding: .5rem; border-radius: 6px; background: transparent; }
 .header { background: var(--bg-contrast)}
 .nav-link { color: var(--text-light); }

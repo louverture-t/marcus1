@@ -10,18 +10,18 @@
 
 <body class="pb-20 bg-bg-primary text-text-primary">
   <!-- Header -->
-  <header class="p-2 shadow-sm header">
+  <header class="p-4 shadow-sm header">
     <div class="max-w-3xl mx-auto flex items-center justify-between">
       <!-- Logo -->
       <div>
         <img class="w-24" src="./assets/logos/marcus-gs-logo-dark.svg" alt="Marcus Savings Goal Tracker" class="logo">
       </div>
       <!-- Navigation -->
-      <div class="flex items-center gap-4 text-sm font-semibold">
+      <div class="flex items-center gap-4 text-sm font-semibold text-text-primary">
         <a href="index.html" class="nav-link">Home</a>
         <a href="index.html" class="nav-link">Goals</a>
         <a href="index.html" class="nav-link">Stats</a>
-        <button id="toggleGoalForm" class="btn btn-contrast-subtle">New Goal</button>
+        <button id="toggleGoalForm" class="btn btn-primary-bold">New Goal</button>
         <button id="themeToggle" class="text-sm">☀️</button>
       </div>
     </div>
@@ -46,12 +46,12 @@
       <h2 class="font-semibold mb-2">Create New Goal</h2>
       <form id="goalForm" novalidate class="space-y-3">
         <div>
-          <label class="block text-sm">Name</label>
+          <label class="block text-sm font-semibold pb-2">Name</label>
           <input id="goalName" class="form-input w-full" type="text" placeholder="Emergency fund" required />
           <p id="goalNameError" class="text-xs text-red-600 mt-1"></p>
         </div>
         <div>
-          <label class="block text-sm">Category</label>
+          <label class="block text-sm font-semibold pb-2">Category</label>
           <select id="goalCategory" class="form-input w-full">
             <option>General</option>
             <option>Vacation</option>
@@ -60,18 +60,18 @@
           </select>
         </div>
         <div>
-          <label class="block text-sm">Target Amount ($)</label>
+          <label class="block text-sm font-semibold pb-2">Target Amount ($)</label>
           <input id="targetAmount" class="form-input w-full" type="number" min="1" step="0.01" required />
           <p id="targetAmountError" class="text-xs text-red-600 mt-1"></p>
         </div>
         <div>
-          <label class="block text-sm">Target Date</label>
+          <label class="block text-sm font-semibold pb-2">Target Date</label>
           <input id="targetDate" class="form-input w-full" type="date" required />
           <p id="targetDateError" class="text-xs text-red-600 mt-1"></p>
         </div>
-        <div class="flex gap-2">
-          <button type="submit" class="btn btn-primary flex-1">Create Goal</button>
-          <button type="button" id="cancelCreate" class="btn btn-secondary flex-1">Cancel</button>
+        <div class="flex place-content-between">
+          <button type="button" id="cancelCreate" class="btn btn-primary-subtle">Cancel</button>
+          <button type="submit" class="btn btn-primary-bold">Create Goal</button>
         </div>
         <p id="limitError" class="text-xs text-red-600 mt-1"></p>
       </form>

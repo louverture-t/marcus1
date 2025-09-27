@@ -50,10 +50,13 @@
   function cardHtml(g) {
     return `
       <article class="card p-3 bg-white shadow-sm rounded" data-id="${g.id}">
+        <div id="progressBarContainer" style="width: 100%; background-color: #f3f3f3; border-radius: 5px; margin-bottom: 8px;">
+            <div id="progressBarFill" style="width: 0%; background-color: #4CAF50; height: 8px; border-radius: 5px;"></div>
+        </div>
         <div class="flex justify-between items-start">
           <div>
-            <div class="font-medium">${esc(g.name)}</div>
-            <div class="text-xs text-gray-500">${esc(g.category)} · ${fmtCurrency(g.target)}</div>
+            <div class="font-semibold text-gray-90">${esc(g.name)}</div>
+            <div class="text-xs text-gray-40">${esc(g.category)} · ${fmtCurrency(g.target)}</div>
             <div class="text-xs text-gray-400">${g.date}</div>
           </div>
           <div class="flex flex-col items-end gap-2">
