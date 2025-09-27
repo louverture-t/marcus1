@@ -1,14 +1,45 @@
+@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /* Minimal custom styles alongside Tailwind */
 :root {
-  
+  /* Semantics */
+  --bg-primary: var(--white);
+  --bg-secondary: var(--gray-10);
+  --bg-tertiary: var(--gray-20);
+  --bg-contrast: var(--blue-90);
+  --btn-bg-primary: var(--blue-60);
+  --text-primary: var(--gray-90);
+  --text-secondary: var(--gray-70);
+  --text-tertiary: var(--gray-40);
+  --text-light: var(--white);
+  --border-minimal: var(--gray-20);
+  --border-subtle: var(--gray-30);
+
+  /* Primitives */
+  --blue-90: #11294D;
+  --blue-60: #186ADE;
+  --brand: #7399c6;
+  --gray-110: #0e171f;
+  --gray-90: #1c2b36;
+  --gray-70: #3e5463;
+  --gray-40: #9fb1bd;
+  --gray-30: #c1ccd6;
+  --gray-20: #dce3e8;
+  --gray-10: #f2f5f7;
   --bg:#f8fafc;
-  --card:#ffffff; }
+  --white:#ffffff; }
 
-[data-theme="dark"] { --bg:#0f172a; --card:#0b1220; color: #e6eef8; }
 body { background: var(--bg); font-family: 'Open Sans', ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; }
-.card { background: var(--card); border-radius: 8px; box-shadow: 0 1px 3px rgba(2,6,23,0.06); }
-.btn { padding: .375rem 1rem; border-radius: 2px; font-weight: 400; font-size: .875rem; }
-.btn-primary-bold { background: #2563eb; color: #fff; }
-.btn-primary-subtle { background: transparent; color: #111827; }
-
-.form-input { border: 1px solid #e6e9ef; padding: .5rem; border-radius: 6px; background: transparent; }
+.card { background: var(--bg-primary); border-radius: 8px; box-shadow: 0 1px 3px rgba(2,6,23,0.06); }
+.btn { padding: .375rem 1rem; border-radius: 2px; font-weight: 600; font-size: .875rem; }
+.btn-primary-bold { background: var(--btn-bg-primary); color: #fff; }
+.btn-primary-subtle { background: transparent; border: 1px solid var(--blue-60); color: var(--blue-60); }
+.btn-contrast-bold { background: var(--bg-contrast); color: #fff; }
+.btn-contrast-subtle { background: transparent; border: 1px solid var(--bg-primary); color: var(--text-light); }
+.form-input { border: 1px solid var(--border-subtle); padding: .5rem; border-radius: 6px; background: transparent; }
+.header { background: var(--bg-contrast)}
+.nav-link { color: var(--text-light); }
+.surface { background: var(--bg-secondary); }

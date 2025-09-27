@@ -11,10 +11,10 @@
 
   // utils
   const $ = s => document.querySelector(s);
-  const uid = () => Date.now().toString(36) + Math.random().toString(36).slice(2,8);
-  const todayISO = () => new Date().toISOString().slice(0,10);
+  const uid = () => Date.now().toString(36) + Math.random().toString(36).slice(2, 8);
+  const todayISO = () => new Date().toISOString().slice(0, 10);
   const fmtCurrency = v => Number(v).toLocaleString(undefined, { style: 'currency', currency: 'USD', maximumFractionDigits: 2 });
-  const esc = s => String(s).replace(/[&<>"']/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":"&#39;"}[c]));
+  const esc = s => String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": "&#39;" }[c]));
 
   // refs
   const refs = {
@@ -48,18 +48,26 @@
 
   // render helpers
   function cardHtml(g) {
+    const currentSavings = g.currentSavings || 0;
+    const progressPercentage = Math.min((currentSavings / g.target) * 100, 100);
+
     return `
       <article class="card p-3 bg-white shadow-sm rounded" data-id="${g.id}">
+        <div id="progressBarContainer" style="width: 100%; background-color: #f3f3f3; border-radius: 5px; margin-bottom: 8px;">
+            <div id="progressBarFill" style="width: ${progressPercentage}%; background-color: #4CAF50; height: 8px; border-radius: 5px;"></div>
+        </div>
         <div class="flex justify-between items-start">
           <div>
-            <div class="font-medium">${esc(g.name)}</div>
-            <div class="text-xs text-gray-500">${esc(g.category)} · ${fmtCurrency(g.target)}</div>
+            <div class="font-semibold text-gray-90">${esc(g.name)}</div>
+            <div class="text-xs text-gray-40">${esc(g.category)} · ${fmtCurrency(g.target)}</div>
             <div class="text-xs text-gray-400">${g.date}</div>
+            <div class="text-xs text-gray-600">Saved: ${fmtCurrency(currentSavings)} / ${fmtCurrency(g.target)}</div>
           </div>
           <div class="flex flex-col items-end gap-2">
             ${g.saved
-              ? `<button data-action="delete" class="text-red-600 text-sm">Delete</button>`
-              : `<button data-action="complete" class="text-green-600 text-sm">Complete</button>`}
+        ? `<button data-action="delete" class="text-red-600 text-sm">Delete</button>`
+        : `<button data-action="complete" class="text-green-600 text-sm">Complete</button>`}
+            <button data-action="addSavings" class="text-blue-600 text-sm">Add Savings</button>
           </div>
         </div>
       </article>
@@ -89,6 +97,29 @@
     } else if (action === 'delete') {
       goals = goals.filter(g => g.id !== id);
       save(goals); render();
+      // Add Savings button action
+    } else if (action === 'addSavings') {
+      const goal = goals.find(g => g.id === id);
+      if (!goal) return;
+      // User prompt to enter the amount to add to savings
+      const amountStr = prompt('Enter the amount to add to your savings:');
+      if (amountStr === null) return; // User cancelled
+
+      const amount = parseFloat(amountStr); //converts to number
+      if (isNaN(amount) || amount <= 0) { //checks if a number or less than 0
+        alert('Please enter a valid positive number.');
+        return;
+      }
+
+      // Update the goal's current savings
+      goals = goals.map(g =>
+        g.id === id
+          ? { ...g, currentSavings: (g.currentSavings || 0) + amount }
+          : g
+      );
+
+      save(goals);
+      render();
     }
   }
 
@@ -114,7 +145,9 @@
       target: Number(vals.amount),
       date: vals.date,
       saved: false,
+      currentSavings: 0,
     };
+    // Save goal action
     goals.push(goal);
     save(goals);
     refs.form.reset();
@@ -129,16 +162,6 @@
   // attach delegation listeners
   refs.activeList.addEventListener('click', onListClick);
   refs.completedList.addEventListener('click', onListClick);
-
-  // simple theme toggle (persisted)
-  const THEME_KEY = 'minimal:theme';
-  function setTheme(t) {
-    document.documentElement.dataset.theme = t;
-    localStorage.setItem(THEME_KEY, t);
-    refs.themeToggle.textContent = t === 'dark' ? '🌙' : '☀️';
-  }
-  refs.themeToggle.addEventListener('click', () => setTheme(document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark'));
-  setTheme(localStorage.getItem(THEME_KEY) || 'light');
 
   // init
   refs.date.value = todayISO();
