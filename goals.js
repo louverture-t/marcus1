@@ -52,16 +52,20 @@
     const progressPercentage = Math.min((currentSavings / g.target) * 100, 100);
 
     return `
-      <article class="card p-3 bg-white shadow-sm rounded" data-id="${g.id}">
+    
+      <article class="card p-6 bg-white shadow-sm rounded-lg" data-id="${g.id}">
+        <div class="flex justify-between items-center">
+          <div class="text-s font-semibold">${fmtCurrency(currentSavings)}</div>
+          <div class="text-s font-regular text-gray-400">${progressPercentage}%</div>
+        </div>  
         <div id="progressBarContainer" style="width: 100%; background-color: var(--bg-tertiary); border-radius: 5px; margin-bottom: 8px;">
             <div id="progressBarFill" style="width: ${progressPercentage}%; background-color: var(--blue-60); height: 4px; border-radius: 5px;"></div>
         </div>
         <div class="flex justify-between items-start">
           <div>
-            <div class="font-semibold text-gray-90">${esc(g.name)}</div>
-            <div class="text-xs text-gray-40">${esc(g.category)} · ${fmtCurrency(g.target)}</div>
+            <div class="text-2xl font-semibold text-gray-900">${esc(g.name)}${esc(g.category)}</div>
+            <div class="text-xs text-gray-400">Goal:${fmtCurrency(g.target)}</div> 
             <div class="text-xs text-gray-400">${g.date}</div>
-            <div class="text-xs text-gray-600">Saved: ${fmtCurrency(currentSavings)} / ${fmtCurrency(g.target)}</div>
           </div>
           <div class="flex flex-col items-end gap-2">
             ${g.saved

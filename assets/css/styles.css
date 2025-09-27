@@ -42,6 +42,7 @@ body {
   background: var(--bg-primary);
   border-radius: 8px;
   box-shadow: 0 1px 3px rgba(2, 6, 23, 0.06);
+  row-gap: 16px;
 }
 
 .btn {
@@ -81,7 +82,7 @@ body {
 }
 
 .header {
-  background: var(--bg-contrast)
+  background: var(--bg-contrast);
 }
 
 .nav-link {
@@ -101,4 +102,8 @@ body {
   flex-direction: column;
   justify-content: center;
   row-gap: 16px;
+}
+
+#custom-body {
+  background: var(--bg-contrast);
 }
