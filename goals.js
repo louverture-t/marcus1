@@ -53,7 +53,7 @@
 
     return `
     
-      <article class="card p-6 bg-white shadow-sm rounded-lg" data-id="${g.id}">
+      <article class="flex flex-col gap-y-2 card p-6 bg-white shadow-sm rounded-lg" data-id="${g.id}">
         <div class="flex justify-between items-center">
           <div class="text-s font-semibold">${fmtCurrency(currentSavings)}</div>
           <div class="text-s font-regular text-gray-400">${progressPercentage}%</div>
@@ -61,20 +61,22 @@
         <div id="progressBarContainer" style="width: 100%; background-color: var(--bg-tertiary); border-radius: 5px; margin-bottom: 8px;">
             <div id="progressBarFill" style="width: ${progressPercentage}%; background-color: var(--blue-60); height: 4px; border-radius: 5px;"></div>
         </div>
-        <div class="justify-between items-start">
-          <div>
-            <div class="flex justify-start gap-4 items-center text-2xl font-semibold text-gray-900">
-              ${esc(g.name)}
-              <div class="badge inline text-xs">${esc(g.category)}</div>
+        <div class="flex flex-col gap-y-4">
+          <div class="flex flex-col gap-4">
+            <div class="flex justify-start gap-4 items-center text-3xl font-semibold text-gray-900">
+              ${esc(g.name)} <div class="badge inline text-xs">${esc(g.category)}</div>
             </div>
-            <div class="font-semibold text-s text-gray-900">Goal: ${fmtCurrency(g.target)}</div> 
-            <div class="text-s text-gray-400">${g.date}</div>
+            <!-- Goal & Target Date -->
+            <div class="flex flex-col gap-xs">
+              <div class="font-semibold text-s text-gray-900">Goal: ${fmtCurrency(g.target)}</div> 
+              <div class="flex items-center gap-x-2 text-s text-gray-400"><img src="assets/icons/date_range.svg" alt="Date Range Icon" class="w-4 h-4">${g.date}</div>
+            </div>
           </div>
-          <div class="flex flex-col items-end gap-2">
+          <div class="flex flex-row justify-between items-end gap-2">
             ${g.saved
         ? `<button data-action="delete" class="text-red-600 text-sm">Delete</button>`
-        : `<button data-action="complete" class="text-green-600 text-sm">Complete</button>`}
-            <button data-action="addSavings" class="btn btn-primary-subtle">Add Savings</button>
+        : `<button data-action="complete" class="btn btn-primary-subtle">Complete</button>`}
+            <button data-action="addSavings" class="btn btn-primary-bold">Add Savings</button>
           </div>
         </div>
       </article>

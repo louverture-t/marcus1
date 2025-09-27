@@ -25,6 +25,7 @@
   --gray-110: #0e171f;
   --gray-90: #1c2b36;
   --gray-70: #3e5463;
+  --gray-60: #5B7282;
   --gray-40: #9fb1bd;
   --gray-30: #c1ccd6;
   --gray-20: #dce3e8;
@@ -111,7 +112,7 @@ body {
   padding: 2px 8px;
   font-size: 12px;
   font-weight: 600;
-  background: var(--gray-70);
+  background: var(--gray-60);
   color: var(--text-light);
   border-radius: 16px;
 }
