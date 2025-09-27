@@ -53,8 +53,8 @@
 
     return `
       <article class="card p-3 bg-white shadow-sm rounded" data-id="${g.id}">
-        <div id="progressBarContainer" style="width: 100%; background-color: #f3f3f3; border-radius: 5px; margin-bottom: 8px;">
-            <div id="progressBarFill" style="width: ${progressPercentage}%; background-color: #4CAF50; height: 8px; border-radius: 5px;"></div>
+        <div id="progressBarContainer" style="width: 100%; background-color: var(--bg-tertiary); border-radius: 5px; margin-bottom: 8px;">
+            <div id="progressBarFill" style="width: ${progressPercentage}%; background-color: var(--blue-60); height: 4px; border-radius: 5px;"></div>
         </div>
         <div class="flex justify-between items-start">
           <div>
@@ -67,7 +67,7 @@
             ${g.saved
         ? `<button data-action="delete" class="text-red-600 text-sm">Delete</button>`
         : `<button data-action="complete" class="text-green-600 text-sm">Complete</button>`}
-            <button data-action="addSavings" class="text-blue-600 text-sm">Add Savings</button>
+            <button data-action="addSavings" class="btn btn-primary-subtle">Add Savings</button>
           </div>
         </div>
       </article>
