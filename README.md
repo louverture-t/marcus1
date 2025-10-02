@@ -1,4 +1,4 @@
-# Marucs by Goldman Sachs - Savings Goal Feature Update
+# Marcus by Goldman Sachs - Savings Goal Feature Update
 
 ## Table of Contents:
 1. [Overview](###overview)
